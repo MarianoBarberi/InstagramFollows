@@ -5,6 +5,7 @@ st.set_page_config(page_title='¿Quién no te sigue?',page_icon=':smiley:', layo
 hide_streamlit_style = """<style>
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
+.st-emotion-cache-gi0tri {display: none;}
 </style>
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
