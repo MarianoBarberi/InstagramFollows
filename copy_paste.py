@@ -1,17 +1,24 @@
 import streamlit as st
 
-st.set_page_config(page_title='¿Quién no te sigue?',page_icon=':smiley:', layout='wide', initial_sidebar_state='expanded')
+st.set_page_config(page_title='¿Quién no te sigue?',page_icon=':smiley:', layout='wide')
 
 hide_streamlit_style = """<style>
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 .st-emotion-cache-gi0tri {display: none;}
-</style>
-"""
+</style>"""
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-# Title
-st.title('¿Quién no te sigue?')
-# Text
+
+
+# Container for the expander and video
+with st.container():
+    col1, col2 = st.columns([6, 4])
+    with col1:
+        st.title('¿Quién no te sigue?')
+    with col2:
+        with st.popover(label=':information_source:', use_container_width=True, help='Tutorial para obtener la lista de seguidores y seguidos de Instagram.'):
+            st.video('https://youtu.be/HniVZmzjoBU')
+
 st.write('Copia y pega la lista de seguidores y seguidos de Instagram.')
 follower_list = st.text_area('Lista de followers:')
 following_list = st.text_area('Lista de following:')
