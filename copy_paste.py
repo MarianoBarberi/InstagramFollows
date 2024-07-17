@@ -9,7 +9,6 @@ footer {visibility: hidden;}
 </style>"""
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-
 # Container for the expander and video
 with st.container():
     col1, col2 = st.columns([6, 4])
