@@ -9,7 +9,7 @@ footer {visibility: hidden;}
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 # Title
-st.title('¿Quién no sigue?')
+st.title('¿Quién no te sigue?')
 # Text
 st.write('Copia y pega la lista de seguidores y seguidos de Instagram.')
 follower_list = st.text_area('Lista de followers:')
