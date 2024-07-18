@@ -19,8 +19,8 @@ with st.container():
             st.video('https://youtu.be/HniVZmzjoBU')
 
 st.write('Copia y pega la lista de seguidores y seguidos de Instagram.')
-follower_list = st.text_area('Lista de followers:')
-following_list = st.text_area('Lista de following:')
+follower_list = st.text_area('Lista de seguidores:')
+following_list = st.text_area('Lista de seguidos:')
 
 if st.button('Calcular'):
     if follower_list == '' or following_list == '':
