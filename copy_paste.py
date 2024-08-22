@@ -27,17 +27,18 @@ if st.button('Calcular'):
         st.warning('Por favor, llena los campos.')
     else:
         follower_after_split = follower_list.split('\n')
-        follower_final_list = []
+        follower_final_list = set()
         for followers in follower_after_split:
             if ' ' not in followers and not any(c.isupper() for c in followers):
-                follower_final_list.append(followers)
+                follower_final_list.add(followers)
 
         following_after_split = following_list.split('\n')
-        following_final_list = []
+        following_final_list = set()
         for following in following_after_split:
             if ' ' not in following and not any(c.isupper() for c in following):
-                following_final_list.append(following)
-        not_followed_back = [user for user in following_final_list if user not in follower_final_list]
+                following_final_list.add(following)
+
+        not_followed_back = following_final_list - follower_final_list
         st.title("Usuarios que no te siguen:")
         for user in not_followed_back:
             st.write(user)
